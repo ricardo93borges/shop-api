@@ -1,4 +1,3 @@
-import { ObjectID } from 'mongodb';
 import { MongoRepository } from 'typeorm';
 import { Product } from '../../src/products/entities/product.entity';
 import { ProductsService } from '../../src/products/products.service';
@@ -24,7 +23,7 @@ describe('ProductsService', () => {
 
       const product = {
         ...createProductDto,
-        id: new ObjectID('64342e031a1b721892473843'),
+        id: '64342e031a1b721892473843',
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -44,7 +43,7 @@ describe('ProductsService', () => {
     it('should call Product repository find method', async () => {
       const products = [
         {
-          id: new ObjectID('64342e031a1b721892473843'),
+          id: '64342e031a1b721892473843',
           name: 'name',
           description: 'description',
           createdAt: new Date(),
@@ -67,7 +66,7 @@ describe('ProductsService', () => {
     it('should call Product repository findOneBy method', async () => {
       const id = '64342e031a1b721892473843';
       const product = {
-        id: new ObjectID(id),
+        id,
         name: 'name',
         description: 'description',
         createdAt: new Date(),
@@ -96,9 +95,9 @@ describe('ProductsService', () => {
         .spyOn(productRepository, 'update')
         .mockResolvedValueOnce({ raw: '', affected: 1, generatedMaps: [] });
 
-      await productService.update(+id, updateProductDto);
+      await productService.update(id, updateProductDto);
 
-      expect(updateSpy).toHaveBeenCalledWith(+id, updateProductDto);
+      expect(updateSpy).toHaveBeenCalledWith(id, updateProductDto);
     });
   });
 
@@ -110,9 +109,9 @@ describe('ProductsService', () => {
         .spyOn(productRepository, 'delete')
         .mockResolvedValueOnce({ raw: '', affected: 1 });
 
-      const result = await productService.remove(+id);
+      const result = await productService.remove(id);
 
-      expect(deleteSpy).toHaveBeenCalledWith(+id);
+      expect(deleteSpy).toHaveBeenCalledWith(id);
       expect(result).toEqual({ raw: '', affected: 1 });
     });
   });

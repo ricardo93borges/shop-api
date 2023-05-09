@@ -1,4 +1,4 @@
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import {
   PipeTransform,
   Injectable,
@@ -7,10 +7,10 @@ import {
 } from '@nestjs/common';
 
 @Injectable()
-export class ParseObjectIdPipe implements PipeTransform<any, ObjectID> {
-  transform(value: any, metadata: ArgumentMetadata): ObjectID {
+export class ParseObjectIdPipe implements PipeTransform<any, ObjectId> {
+  transform(value: any, metadata: ArgumentMetadata): ObjectId {
     try {
-      return new ObjectID(value);
+      return new ObjectId(value);
     } catch (error) {
       throw new BadRequestException('Invalid ID');
     }

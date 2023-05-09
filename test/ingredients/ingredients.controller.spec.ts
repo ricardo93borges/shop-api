@@ -1,4 +1,3 @@
-import { ObjectID } from 'mongodb';
 import { Test } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Product } from '../../src/products/entities/product.entity';
@@ -39,7 +38,7 @@ describe('ProductsController', () => {
 
       const product = {
         ...createProductDto,
-        id: new ObjectID('64342e031a1b721892473843'),
+        id: '64342e031a1b721892473843',
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -59,7 +58,7 @@ describe('ProductsController', () => {
     it('should return an array of products', async () => {
       const products = [
         {
-          id: new ObjectID('64342e031a1b721892473843'),
+          id: '64342e031a1b721892473843',
           name: 'name',
           description: 'description',
           createdAt: new Date(),
@@ -79,7 +78,7 @@ describe('ProductsController', () => {
     it('should return an product', async () => {
       const id = '64342e031a1b721892473843';
       const product = {
-        id: new ObjectID(id),
+        id,
         name: 'name',
         description: 'description',
         createdAt: new Date(),
