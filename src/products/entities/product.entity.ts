@@ -17,6 +17,9 @@ export class Product {
   @Column()
   description: string;
 
+  @Column()
+  quantity: number;
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',

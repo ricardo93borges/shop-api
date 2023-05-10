@@ -19,6 +19,7 @@ describe('ProductsService', () => {
       const createProductDto: CreateProductDto = {
         name: 'name',
         description: 'description',
+        quantity: 1,
       };
 
       const product = {
@@ -46,6 +47,7 @@ describe('ProductsService', () => {
           id: '64342e031a1b721892473843',
           name: 'name',
           description: 'description',
+          quantity: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -69,6 +71,7 @@ describe('ProductsService', () => {
         id,
         name: 'name',
         description: 'description',
+        quantity: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -90,6 +93,7 @@ describe('ProductsService', () => {
       const updateProductDto: UpdateProductDto = {
         name: 'name',
         description: 'description',
+        quantity: 1,
       };
       const updateSpy = jest
         .spyOn(productRepository, 'update')

@@ -34,6 +34,7 @@ describe('ProductsController', () => {
       const createProductDto: CreateProductDto = {
         name: 'name',
         description: 'description',
+        quantity: 1,
       };
 
       const product = {
@@ -61,6 +62,7 @@ describe('ProductsController', () => {
           id: '64342e031a1b721892473843',
           name: 'name',
           description: 'description',
+          quantity: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -81,6 +83,7 @@ describe('ProductsController', () => {
         id,
         name: 'name',
         description: 'description',
+        quantity: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -102,6 +105,7 @@ describe('ProductsController', () => {
       const updateProductDto: UpdateProductDto = {
         name: 'name',
         description: 'description',
+        quantity: 1,
       };
       const updateSpy = jest
         .spyOn(productsService, 'update')
