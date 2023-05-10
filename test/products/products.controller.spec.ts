@@ -35,6 +35,7 @@ describe('ProductsController', () => {
         name: 'name',
         description: 'description',
         quantity: 1,
+        price: 1000,
       };
 
       const product = {
@@ -63,6 +64,7 @@ describe('ProductsController', () => {
           name: 'name',
           description: 'description',
           quantity: 1,
+          price: 1000,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -84,6 +86,7 @@ describe('ProductsController', () => {
         name: 'name',
         description: 'description',
         quantity: 1,
+        price: 1000,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -106,6 +109,7 @@ describe('ProductsController', () => {
         name: 'name',
         description: 'description',
         quantity: 1,
+        price: 1000,
       };
       const updateSpy = jest
         .spyOn(productsService, 'update')

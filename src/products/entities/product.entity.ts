@@ -20,6 +20,9 @@ export class Product {
   @Column()
   quantity: number;
 
+  @Column()
+  price: number;
+
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
